@@ -11,11 +11,11 @@ public class main {
 
 
         List<Ansatt> people = Arrays.asList(
-                new Oppgave3.Ansatt("Henrik", "Olsen", "Mann", "CEO", 1000000),
-                new Oppgave3.Ansatt("Karl", "Olafsen", "Mann", "CFO", 900000),
-                new Oppgave3.Ansatt("Guri", "Hansen", "Kvinne", "CTO", 900000),
-                new Oppgave3.Ansatt("Trond", "Larsen", "Mann", "Senior Utvikler", 550000),
-                new Oppgave3.Ansatt("Line", "Fyllingen", "Kvinne", "Junior Utvikler ", 450000));
+                new Ansatt("Henrik", "Olsen", "Mann", "Sjef", 1000000),
+                new Ansatt("Karl", "Olafsen", "Mann", "IT Sjef", 900000),
+                new Ansatt("Guri", "Hansen", "Kvinne", "IT utvikler", 900000),
+                new Ansatt("Trond", "Larsen", "Mann", "Senior Utvikler", 550000),
+                new Ansatt("Line", "Fyllingen", "Kvinne", "Junior Utvikler ", 450000));
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,12 +38,27 @@ public class main {
         //Oppgave 3c
         System.out.println("Oppgave 3c");
 
+        int gjSnittsLonnKvinner = (Integer) people.stream()
+                .filter(p->p.getKjonn().equals("Kvinne"))
+                .mapToInt(p -> p.getAarslonn()).sum() / antallKvinner;
+                System.out.println("Gjennomsnittslonn for kvinner: " + gjSnittsLonnKvinner);
+
         //Oppgave 3d
-
         System.out.println("Oppgave 3d");
-        //Oppgave 3e
 
+        List<Ansatt> sjefLonn = people.stream()
+                .filter(p-> p.getStilling().matches("/Sjef/"))
+                .collect(Collectors.toList());
+                for(Ansatt s : sjefLonn)
+                    s.setAarslonn((int) ((int) (s.getAarslonn()) * 1.07));
+                System.out.println("Ny lonn til alle Sjefer som okte med 7%: ");
+                for (Ansatt s : people)
+                    System.out.println(s.toString());
+
+
+        //Oppgave 3e
         System.out.println("Oppgave 3e");
+
         //Oppgave 3f
 
         System.out.println("Oppgave 3f");
