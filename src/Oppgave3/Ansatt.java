@@ -1,4 +1,4 @@
-package Oppgave2;
+package Oppgave3;
 
 public class Ansatt {
 
