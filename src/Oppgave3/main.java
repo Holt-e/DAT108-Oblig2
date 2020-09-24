@@ -30,9 +30,10 @@ public class main {
         //Oppgave 3b
         System.out.println("Oppgave 3b");
 
-        people.stream()
+        int antallKvinner = (int) people.stream()
                 .filter(p -> p.getKjonn().equals("Kvinne"))
-                .forEach(System.out::println);
+                .count();
+                System.out.println("Antall kvinner: " + antallKvinner);
 
         //Oppgave 3c
         System.out.println("Oppgave 3c");
