@@ -1,8 +1,7 @@
 package Oppgave2;
 
-public class Kjonn implements Runnable{
-    @Override
-    public void run() {
-
-    }
+public enum Kjonn {
+    MANN,
+    KVINNE,
+    INTETKJONN,
 }

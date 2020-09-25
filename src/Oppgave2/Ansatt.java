@@ -1,17 +1,19 @@
 package Oppgave2;
 
-public class Ansatt {
+import java.util.Objects;
+
+public class Ansatt{
 
     private String fornavn;
     private String etternavn;
-    private String kjonn;
+    private Kjonn kjonn;
     private String stilling;
     private int aarslonn;
 
 
 
 
-    public Ansatt(String fornavn, String etternavn, String kjonn, String stilling, int aarslonn) {
+    public Ansatt(String fornavn, String etternavn, Kjonn kjonn, String stilling, int aarslonn) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.kjonn = kjonn;
@@ -23,9 +25,9 @@ public class Ansatt {
 
     public void setEtternavn(String etternavn) { this.etternavn = etternavn; }
 
-    public String getKjonn() { return kjonn; }
+    public Kjonn getKjonn() { return kjonn; }
 
-    public void setKjonn(String kjonn) { this.kjonn = kjonn; }
+    public void setKjonn(Kjonn kjonn) { this.kjonn = kjonn; }
 
     public String getStilling() { return stilling; }
 
